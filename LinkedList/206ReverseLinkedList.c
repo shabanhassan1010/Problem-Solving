@@ -5,6 +5,10 @@
  *     struct ListNode *next;
  * };
  */
+ struct ListNode {
+      int value;
+      struct ListNode *next;
+  };
 struct ListNode* reverseList(struct ListNode* head) 
 {
     struct ListNode *prev = NULL;      // Tracks the previous node
