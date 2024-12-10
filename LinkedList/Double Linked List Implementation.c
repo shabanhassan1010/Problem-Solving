@@ -7,6 +7,12 @@ struct Node {
     struct Node *next;
 } *head = NULL;
 
+struct Student {
+    int Id;
+    char name[50];
+    float marks;
+};
+
 void create(int arr[], int n) 
 {
     struct Node *temp, *last;
@@ -46,7 +52,6 @@ int Length(struct Node *temp)
     }
     return count;
 }
-
 
 void insert(struct Node *temp, int index, int value) 
 {
@@ -117,22 +122,49 @@ int Delete(struct Node *temp , int index)
     return value;
 }
 
-
 int main() 
 {
-    int list[] = {2, 3, 4, 5, 6 , 9};
-    create(list, 6); 
-    printf("Create Linked List: ");
+    int choice, index, value, deletedValue;
+    int initialData[] = {10, 20, 30};
+    int n = sizeof(initialData) / sizeof(initialData[0]);
 
-    Display(head); 
-    printf("Length of the list: %d\n", Length(head)); 
+    create(initialData, n);
 
-    insert(head,3, 8);
-    Display(head); 
+    do {
+        printf("\nMenu:\n");
+        printf("1. Add\n");
+        printf("2. Delete\n");
+        printf("3. Print All\n");
+        printf("4. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
 
-    Delete(head , 1);
-    Delete(head , 3);
-    Display(head); 
+        switch (choice) {
+            case 1:
+                printf("Enter index to insert: ");
+                scanf("%d", &index);
+                printf("Enter value to insert: ");
+                scanf("%d", &value);
+                insert(head, index, value);
+                break;
+            case 2:
+                printf("Enter index to delete: ");
+                scanf("%d", &index);
+                deletedValue = Delete(head, index);
+                if (deletedValue != -1)
+                    printf("Deleted value: %d\n", deletedValue);
+                break;
+            case 3:
+                printf("List elements: ");
+                Display(head);
+                break;
+            case 4:
+                printf("Exiting...\n");
+                break;
+            default:
+                printf("Invalid choice. Please try again.\n");
+        }
+    } while (choice != 4);
 
     return 0;
 }
