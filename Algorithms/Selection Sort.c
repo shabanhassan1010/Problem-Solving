@@ -13,6 +13,7 @@ void SelectionSort(int arr[] , int size)
                 k = j;
             }
         }
+        // Swapping between i >>> k
             int temp = arr[i];
             arr[i] = arr[k];
             arr[k] = temp;
