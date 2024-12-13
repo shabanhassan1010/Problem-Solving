@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
+// Merging Two List in single list....
 void MarggingTwoList(int arr1[] , int arr2[] , int arr3[] , int sizeForArr1 , int sizeForArr2)
 {
         int i = 0, j = 0, k = 0;
@@ -34,6 +34,41 @@ void MarggingTwoList(int arr1[] , int arr2[] , int arr3[] , int sizeForArr1 , in
     }
 }
 
+
+// Merging Two List in single list....
+void Mergging(int arr1[] , int left , int mid , int right)
+{
+
+    int i = left;
+    int k = left;
+    int j = mid + 1;
+    int arr2 [20];
+    while(i <= mid && j <= right)
+    {
+        if(arr1[i] < arr1[j])
+        {
+            arr2[k++] = arr1[i++];
+        }
+        else
+        {
+            arr2[k++] = arr1[j++];
+        }
+    }
+    while(i <= mid)
+    {
+        arr2[k] = arr1[i];
+        k++;
+    }
+    while(j <= left )
+    {
+        arr2[k] = arr1[j];
+        k++;
+    }
+    for(int i = 0 ; i <= right ; i++)
+    {
+        arr1[i] = arr2[i];
+    }
+}
 
 int main()
 {
