@@ -4,7 +4,7 @@
 
 void MarggingTwoList(int arr1[] , int arr2[] , int arr3[] , int sizeForArr1 , int sizeForArr2)
 {
-    int i , j , k = 0;
+        int i = 0, j = 0, k = 0;
     while(i < sizeForArr1 && j < sizeForArr2)
     {
         if(arr1[i] < arr2[j])
