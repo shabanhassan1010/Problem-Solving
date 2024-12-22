@@ -34,7 +34,7 @@ int Enqueue(struct queue *q , struct student st)
 struct student Dequeue(struct queue *q)
 {
     struct student st = {0 , ""};
-    if(q->front == q->rear)
+    if(q->front == q->rear == -1)
         printf("Queue is empty \n");
     else
     {
@@ -47,7 +47,7 @@ struct student Dequeue(struct queue *q)
 
 void display(struct queue *q)
 {
-    if(q->front == q->rear)
+    if(q->front == q->rear == -1)
         printf("queue is empty");
 
         for (int i = q->front + 1; i <= q->rear; i++)
