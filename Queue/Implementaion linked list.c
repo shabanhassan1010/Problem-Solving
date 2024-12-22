@@ -61,13 +61,12 @@ int IsFull(int size)
 
 void Display()
 {
-    struct Node *p=front;
-    while(p != NULL)
+    struct Node *temp = front;
+    while (temp != NULL)
     {
-        printf("%d ",p->data);
-        p=p->next;
+        printf("tha data is: %d" , temp->data);
+        temp = temp->next;
     }
-    printf("\n");
 }
 
 int main()
