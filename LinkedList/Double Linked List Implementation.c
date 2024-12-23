@@ -68,10 +68,12 @@ void insert(struct Node *temp, int index, int value)
     newNode->data = value;
 
     // Case 1: Insert at the beginning
-    if (index == 0) {
+    if (index == 0) 
+    {
+        newNode->data = value;
         newNode->prev = NULL;
-        newNode->next = temp;
-        if (temp != NULL) temp->prev = newNode;
+        newNode->next = head;
+        head->prev = newNode;
         head = newNode; // Update the global `first` pointer
         return;
     }
