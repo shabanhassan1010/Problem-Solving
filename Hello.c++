@@ -65,6 +65,7 @@ class student
       Name = new char[strlen(name) + 1];
       strcpy(Name, name);
     }
+
     char* GetName()
     {
         return Name;
@@ -78,20 +79,16 @@ class student
     }
     void PrintStudent(student &st)
     {
-        cout<< st.GetId() << st.GetName() <<endl;
+        cout << "ID: " << st.GetId() << " Name: " << st.GetName() << std::endl;
     }
 
 int main()
 {
-    student st3;
-    student st4 (1,"sh3obola");
-    FillStudent(st4, 1, "shaban");
+    student st4(1, "sh3obola");
+    //FillStudent(st4, 1, "shaban");
     PrintStudent(st4);
-    student st1;
-    st1.SetId(2);
-    st1.SetName("mohamed");
-    PrintStudent(st1);
 
-
+    student st3(2, "Ali");
+    PrintStudent(st3);
     return 0;
 }
