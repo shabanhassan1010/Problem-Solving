@@ -1,5 +1,5 @@
 #include<stdio.h>
-
+#include <stdbool.h> // Include for true and false
 
 
 bool isValid(char *s) 
