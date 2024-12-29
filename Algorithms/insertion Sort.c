@@ -7,7 +7,7 @@ void insertionSort(int arr[] , int size )
     {
         int j = i-1;
         int x = arr[i];
-        while (j > -1 && arr[j] > x)
+        while ( j > -1 && arr[j] > x)
         {
             arr[j+1] = arr[j];
             j--;
@@ -16,14 +16,15 @@ void insertionSort(int arr[] , int size )
     }
 }
 
+
+
 int main()
 {
     int arr [] = {9 , 19 , 2 , 12 , 4 , 7 , 9};
     insertionSort(arr , 7);
     for(int i = 0 ; i < 7 ; i++)
     {
-        printf("%d"  , arr[i]);
-        printf("%d");
+        printf("%d \n"  , arr[i]);
     }
    
  
