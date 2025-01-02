@@ -28,7 +28,8 @@ int hashFunction(int key)
 
 struct Node* search(struct Node* temp, int key) 
 {
-    while (temp != NULL) {
+    while (temp != NULL) 
+    {
         if (temp->data == key) {
             return temp; // Key found
         }
@@ -47,10 +48,15 @@ void SortedInsert(struct Node** head, int key)
     if (*head == NULL || (*head)->data >= key) {
         temp->next = *head;
         *head = temp;
-    } else {
+    } 
+    else 
+    {
         // Traverse the list to find the correct position
         current = *head;
-        while (current->next != NULL && current->next->data < key) {
+        // The smallest one will make it the last node, and it will also check if there is a node in the linkedList; 
+        // it will keep going as long as there is one.
+        while (current->next != NULL && current->next->data < key)  
+        {
             current = current->next;
         }
         // Insert the new node
@@ -59,12 +65,25 @@ void SortedInsert(struct Node** head, int key)
     }
 }
 
-// Function to insert a key into the hash table
 void InsertkeyInHashTable(struct HashTable* ht, int key) 
 {
     int index = hashFunction(key); // Get the hash index
     SortedInsert(&(ht->table[index]), key); // Insert the key in sorted order
 }
+
+// Function to create a hash table
+struct HashTable* CreateHashTable(int size) 
+{
+    struct HashTable* ht = (struct HashTable*)malloc(sizeof(struct HashTable));
+    ht->size = size;
+    ht->table = (struct Node**)malloc(size * sizeof(struct Node*));
+    for (int i = 0; i < size; i++)
+    {
+        ht->table[i] = NULL; // Initialize all linked lists to NULL
+    }
+    return ht;
+}
+
 
 void Display(struct HashTable* ht) 
 {
@@ -80,19 +99,6 @@ void Display(struct HashTable* ht)
         printf("NULL\n");
     }
 }
-
-// Function to create a hash table
-struct HashTable* CreateHashTable(int size) 
-{
-    struct HashTable* ht = (struct HashTable*)malloc(sizeof(struct HashTable));
-    ht->size = size;
-    ht->table = (struct Node**)malloc(size * sizeof(struct Node*));
-    for (int i = 0; i < size; i++) {
-        ht->table[i] = NULL; // Initialize all linked lists to NULL
-    }
-    return ht;
-}
-
 
 int main() {
     struct HashTable* ht = CreateHashTable(10); // Create a hash table of size 10
