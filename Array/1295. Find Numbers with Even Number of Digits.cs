@@ -17,7 +17,7 @@ public class Solution
         int num = 0;
         for(int i = 0 ; i < nums.Length ; i++)
         {       
-            int count = 0;
+            int count = 0;  // must be in every index inizlate count with zero
             while(nums[i] != 0)
             {
                 nums[i] = nums[i] / 10; 

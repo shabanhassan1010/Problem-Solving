@@ -13,7 +13,6 @@ public class Solution
             }
             nums[i] = sum;
         }
-        nums = sum;
         Array.Sort(nums);
         return nums[0];
     }
