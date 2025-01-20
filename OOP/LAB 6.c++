@@ -2,149 +2,145 @@
 #include <cstring>
 using namespace std;
 
-class person 
-{
-    char name[50]; 
-    int id;        
-public:
-    person() 
-    {
-        name[0] = '\0';
-        id = 0; 
-        cout << "Hello from default constructor in person class" << endl;        
-    }
+// class person 
+// {
+//     char name[50]; 
+//     int id;        
+// public:
+//     person() 
+//     {
+//         name[0] = '\0';
+//         id = 0; 
+//         cout << "Hello from default constructor in person class" << endl;        
+//     }
 
-    person(const char* n, int i) 
-    {
-        strncpy(name, n, 49); 
-        name[49] = '\0';      
-        id = i;
-        cout << "Hello from parameterized constructor in person class" << endl;
+//     person(const char* n, int i) 
+//     {
+//         strncpy(name, n, 49); 
+//         name[49] = '\0';      
+//         id = i;
+//         cout << "Hello from parameterized constructor in person class" << endl;
 
-    }
+//     }
 
-    void SetName(const char* n) 
-    {
-        strncpy(name, n, 49); 
-        name[49] = '\0';      
-    }
+//     void SetName(const char* n) 
+//     {
+//         strncpy(name, n, 49); 
+//         name[49] = '\0';      
+//     }
 
-    void SetId(int i) 
-    {
-        id = i;
-    }
+//     void SetId(int i) 
+//     {
+//         id = i;
+//     }
 
-    const char* GetName() 
-    {
-        return name;
-    }
+//     const char* GetName() 
+//     {
+//         return name;
+//     }
 
-    int GetId() 
-    {
-        return id;
-    }
+//     int GetId() 
+//     {
+//         return id;
+//     }
 
-    void Display() 
-    {
-        cout << "Name: " << name << ", ID: " << id << endl;
-    }
-};
+//     void Display() 
+//     {
+//         cout << "Name: " << name << ", ID: " << id << endl;
+//     }
+// };
 
-class Employee: public person
-{
-    int salary;
-    int id;
-    char name [50];
-public:
-    Employee() : person()
-    {
-        cout << "Hello from default constructor in Employee class" << endl;        
-        salary = 0;
-    }
+// class Employee: public person
+// {
+//     int salary;
+// public:
+//     Employee() : person()
+//     {
+//         cout << "Hello from default constructor in Employee class" << endl;        
+//         salary = 0;
+//     }
 
-    Employee(const char* n, int id, int sal) : person(n, id)
-    {
-        salary = sal;
-        cout << "Hello from parameterized constructor in Employee class" << endl;
-    }
+//     Employee(const char* n, int id, int sal) : person(n, id)
+//     {
+//         salary = sal;
+//         cout << "Hello from parameterized constructor in Employee class" << endl;
+//     }
 
-    void SetSalary(int sal) 
-    {
-        salary = sal;
-    }
+//     void SetSalary(int sal) 
+//     {
+//         salary = sal;
+//     }
 
-    int GetSalary() 
-    {
-        return salary;
-    }
+//     int GetSalary() 
+//     {
+//         return salary;
+//     }
 
-    void Print() 
-    {
-        cout << "Name: " << GetName() << ", ID: " << GetId() << ", Salary: " << salary << endl;
-    }
-};
+//     void Print() 
+//     {
+//         cout << "Name: " << GetName() << ", ID: " << GetId() << ", Salary: " << salary << endl;
+//     }
+// };
 
-class Customer: public person
-{
-    float accountNumber;
-public:
-    Customer():person()
-    {
-        cout << "Hello from default constructor in Customer class" << endl;        
-        accountNumber = 0;
-    }
+// class Customer: public person
+// {
+//     float accountNumber;
+// public:
+//     Customer():person()
+//     {
+//         cout << "Hello from default constructor in Customer class" << endl;        
+//         accountNumber = 0;
+//     }
 
-    Customer(const char* n, int id , int accountNum):person(n , id)
-    {
-        accountNumber = accountNum;
-        cout << "Hello from parameterized  constructor in Customer class" << endl;        
-    }
+//     Customer(const char* n, int id , int accountNum):person(n , id)
+//     {
+//         accountNumber = accountNum;
+//         cout << "Hello from parameterized  constructor in Customer class" << endl;        
+//     }
 
-    void setAccountNumber(int accountNum)
-    {
-        accountNumber = accountNum;
-    }
+//     void setAccountNumber(int accountNum)
+//     {
+//         accountNumber = accountNum;
+//     }
 
-    int getAccountNumber()
-    {
-        return accountNumber;
-    }
-    void Print() 
-    {
-        cout << "Name: " << GetName() << ", ID: " << GetId() << ", accountNumber: " << getAccountNumber() << endl;
-    }
+//     int getAccountNumber()
+//     {
+//         return accountNumber;
+//     }
+//     void Print() 
+//     {
+//         cout << "Name: " << GetName() << ", ID: " << GetId() << ", accountNumber: " << getAccountNumber() << endl;
+//     }
 
-};
+// };
 
-int main()
-{
-    person p1; 
-    p1.SetName("Omar"); 
-    p1.Display(); 
+// int main()
+// {
+//     person p1;  // "Hello from default constructor in person class" 
+//     p1.SetName("Omar"); 
+//     p1.Display();  
+//     p1.SetId(1); 
+//     p1.Display();   
 
-    p1.SetId(1); 
-    p1.Display(); 
-    person p2;
+//     person p3("Shaban", 2);  // "Hello from parameterized constructor in person class" 
+//     p3.Display();
 
-    person p3("Shaban", 2);
-    p3.Display();
+//     cout << "\n" << endl;
+//     Employee e1; // "Hello from default constructor in person class"  and   "Hello from default constructor in Employee class"
+//     e1.SetName("Jeson Statom");
+//     e1.Display();  
+//     e1.SetId(100);
+//     e1.Display(); 
 
-    cout << "\n" << endl;
-    Employee e1;
-    e1.SetName("Jeson Statom");
-    e1.Display();
-    e1.SetId(100);
-    e1.Display();
+//     Employee e2("Mohamed", 3, 50000); // "Hello from parameterized constructor in Employee and base class" 
+//     e2.Print(); 
 
-    Employee e2("Mohamed", 3, 50000);
-    e2.Print();
+//     cout << "\n" << endl;
+//     Customer c1("messi" , 10 ,1990);
+//     c1.Print();
 
-    cout << "\n" << endl;
-    Customer c1("messi" , 10 ,1990);
-    c1.Print();
-
-    return 0;
-}
+//     return 0;
+// }
 
 
 
@@ -157,7 +153,7 @@ protected:
 public:
     base()
     {
-        Z = 0;
+        Z = 10;
         cout << "Base default constructor called." << endl;
     }
     base(int z)
@@ -232,11 +228,11 @@ class base2 : virtual public base
 class child : public base1 , public base2
 {
     public:
-    child()
+    child() : base()
     {
         cout << "Child default constructor called." << endl;
     }
-    child(int m, int n, int z) : base(z), base1(m), base2(n)
+    child(int m, int n) : base1(m), base2(n)
     //child(int m , int n , int z ): base1(m) ,base2(n) 
     {
         cout << "Child parameterized constructor called." << endl;
@@ -244,11 +240,11 @@ class child : public base1 , public base2
     }
     int sum()
     {
-        return getx() + gety() + getz() ;
+        return X + Y + Z;
     }
     int product()
     {
-        return getx() * gety() * getz() ; 
+        return X * Y * Z ; 
     }
     void print()
     {
@@ -258,10 +254,9 @@ class child : public base1 , public base2
 
 int main()
 {
-  child ch(3, 8 , 9);
-  ch.sum();
-  ch.product();
-  ch.print();
-
+    child ch(3, 8);
+    ch.sum();
+    ch.product();
+    ch.print();
     return 0;
-}
+};

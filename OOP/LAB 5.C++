@@ -57,11 +57,6 @@ public:
         return id;
     }
 
-    void Display()
-    {
-        cout << "ID: " << id << ", Name: " << name << ", School Name: " << schoolName << endl;
-    }
-
     static int getCounter()
     {
         return counter;
@@ -82,6 +77,12 @@ public:
     {
         return schoolName;
     }
+
+        void Display()
+    {
+        cout << "ID: " << id << ", Name: " << name << ", School Name: " << schoolName << endl;
+    }
+
 };
 
 char* Employee::schoolName = "School One"; 

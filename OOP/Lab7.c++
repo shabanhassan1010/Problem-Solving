@@ -47,22 +47,17 @@ public:
 class circle : public shape
 {
 public:
-    circle() {}
-    circle(int c) : shape(c) {}
+    circle() 
+    {
+
+    }
+    circle(int c) : shape(c) 
+    {
+
+    }
     float Area()
     {
         return (3.14 * dim1 * dim2);
-    }
-};
-
-class Rectangle : public shape
-{
-public:
-    Rectangle() {}
-    Rectangle(int r, int r2) : shape(r, r2) {}
-    float Area()
-    {
-        return (1.0 * dim1 * dim2);
     }
 };
 
@@ -74,6 +69,17 @@ public:
     float Area()
     {
         return (0.5 * dim1 * dim2);
+    }
+};
+
+class Rectangle : public shape
+{
+public:
+    Rectangle() {}
+    Rectangle(int r, int r2) : shape(r, r2) {}
+    float Area()
+    {
+        return (1.0 * dim1 * dim2);
     }
 };
 

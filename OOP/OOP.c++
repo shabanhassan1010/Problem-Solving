@@ -8,13 +8,13 @@ class Student
     char name[50]; 
     int id;        
 public:
-    Student() 
+    Student()  // default constructor
     {
         name[0] = '\0'; // Initialize name to an empty string
         id = 0;         
     }
 
-    Student(const char* n, int i) 
+    Student(const char* n, int i) // parametrized constructor
     {
         strncpy(name, n, 49); // Copy the name into the char array
         name[49] = '\0';      
@@ -23,12 +23,8 @@ public:
 
     void SetName(const char* n) 
     {
-        strncpy(name, name, 49); // Copy the name into the char array
-        name[49] = '\0';
-        // delete[] this->name;    
-        // int lenName = strlen(name)+1;      
-        // this->name = new char [lenName];      
-        // strcpy(this->name , name);    
+        strncpy(name , n , 49);
+        name[49] = '\0';   
     }
 
     void SetId(int i) 

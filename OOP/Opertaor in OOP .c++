@@ -8,7 +8,6 @@ class Employee
     char *name;
 
 public:
-
     Employee(int id = 0 , char name [] = "Default Constructor")
     {
         this->id = id ;
@@ -85,7 +84,7 @@ Employee Employee ::operator+(Employee &emp)
     Employee temp;
     temp.id = id + emp.id;
     int lenName = strlen(name) +  strlen(emp.name) +  1;
-    temp.name = new char [lenName];
+    temp.name = new char[lenName];
     strcpy(temp.name , name);
     strcat(temp.name , emp.name);
     return temp;
@@ -94,7 +93,7 @@ Employee Employee ::operator+(Employee &emp)
 Employee Employee ::operator+(int id)
 {
     Employee temp ;
-    temp.id =  this->id + id; 
+    temp.id = this->id + id; 
     return temp;
 }
 
@@ -150,7 +149,7 @@ Employee& Employee::operator=(Employee &emp)
         strcpy(name, emp.name); 
     } else 
     {
-         name = nullptr; 
+         name = NULL; 
     }
     return *this; 
 }
@@ -171,26 +170,38 @@ int main()
    Employee emp2(1, "hassan"); 
    Employee emp3 = emp1 + emp2; 
    emp3.Display(); 
+   cout<< endl;
 
-   Employee emp4 = 3 + emp1; 
-   Employee emp5 = 3 + emp2; 
+   Employee emp4 = emp1+ 5; 
+   Employee emp5 = emp2+ 4; 
    emp4.Display(); //4
    emp5.Display(); // 5
+    cout<< endl;
+
+   Employee emp10 = 3 + emp1; 
+   Employee emp11= 3 + emp2; 
+   emp10.Display(); //4
+   emp11.Display(); // 5
+    cout<< endl;
 
    ++emp1; 
    emp1.Display(); 
    emp2++; 
    emp2.Display();
+   cout<< endl;
 
    Employee emp6; 
    emp6 = emp1; 
    emp6.Display();
+   cout<< endl;
 
    Employee emp7 = "Mr. " + emp1; 
    emp7.Display();
+    cout<< endl;
 
    Employee emp8 =  emp2 + " Oky "; 
    emp8.Display();
+   cout<< endl;
 
    int isEqual = (emp1 == emp2);
     if (isEqual == 1)
