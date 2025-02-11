@@ -2,7 +2,6 @@
 {
     public int MaxAscendingSum(int[] nums)
     {
-
         int MaxSize = nums[0];
         int CurrrentNumber = nums[0];
         for(int i = 1; i < nums.Length; i++)
